@@ -1,7 +1,7 @@
 variable "project_id" {
   description = "The GCP project to deploy resources in"
   type        = string
-  default     = "qwiklabs-gcp-01-4ab904757393"
+  # default     = "qwiklabs-gcp-01-4ab904757393"
   
 }
 variable "apis" {
