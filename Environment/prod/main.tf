@@ -51,10 +51,10 @@ resource "google_compute_disk" "my-disk" {
 }
 
 resource "google_compute_attached_disk" "my-attached-disk" {
-  for_each = var.vm
-  instance = google_compute_instance.default[each.key].name
-  disk     = google_compute_disk.my-disk[each.key].name
-  zone     = var.my_zone
+  for_each   = var.vm
+  instance   = google_compute_instance.default[each.key].name
+  disk       = google_compute_disk.my-disk[each.key].name
+  zone       = var.my_zone
   depends_on = [google_compute_disk.my-disk, google_compute_instance.default]
 }
 

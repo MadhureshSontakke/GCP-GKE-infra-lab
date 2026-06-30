@@ -79,21 +79,21 @@ variable "vpc_name" {
 
 variable "subnet_name" {
   description = "The name of the subnetwork to create"
-  type        = map(object({
-    name = string,
-    cidr_range  = string
-    
+  type = map(object({
+    name       = string,
+    cidr_range = string
+
   }))
-default = {
-  "public_subnet" = {
-    name = "public-subnet"
-    cidr_range  = "10.0.0.0/24"
-    
+  default = {
+    "public_subnet" = {
+      name       = "public-subnet"
+      cidr_range = "10.0.0.0/24"
+
+    }
+    "private_subnet" = {
+      name       = "private-subnet"
+      cidr_range = "10.0.1.0/24"
+
+    }
   }
-  "private_subnet" = {
-    name = "private-subnet"
-    cidr_range  = "10.0.1.0/24"
-    
-  }
-} 
 }
