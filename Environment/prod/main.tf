@@ -90,15 +90,15 @@ module "subnet" {
 
 
 module "gke" {
-  source = "../../modules/GKE"
+  source       = "../../modules/GKE"
   cluster_name = "prod-gke-cluster"
   # location = local.my_zone
   # machine_type = "e2-medium"
   subnet = module.subnet.subnet-ids["gke-subnet"]
 
-  region = var.my_region
+  region     = var.my_region
   node_count = 2
   network_id = module.vpc.vpc-id
 
-  
+
 }
