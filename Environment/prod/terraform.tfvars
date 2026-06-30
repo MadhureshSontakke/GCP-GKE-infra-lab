@@ -1,6 +1,6 @@
 # backend-bucket = "terraform-backend-2099-2"
 # backend-bucket-prefix = "terraform/prod/state"
-my_project = "qwiklabs-gcp-01-47500ba5677e"
+my_project = "qwiklabs-gcp-03-ef776478e088"
 my_region  = "us-west1"
 my_zone    = "us-west1-b"
 vm = {
