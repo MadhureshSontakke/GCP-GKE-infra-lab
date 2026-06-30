@@ -73,7 +73,7 @@ module "APIs" {
 module "vpc" {
   source = "../../modules/VPC"
   # vpc_name  = var.vpc_name
-  region    = var.my_region
+  region = var.my_region
   # subnet_name = var.subnet_name
 
 }
@@ -82,6 +82,6 @@ module "subnet" {
   source      = "../../modules/subnet"
   subnet_name = var.subnet_name
   network_id  = module.vpc.vpc_output
-  region = var.my_region
+  region      = var.my_region
 
 }
