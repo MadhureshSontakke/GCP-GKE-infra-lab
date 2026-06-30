@@ -95,5 +95,10 @@ variable "subnet_name" {
       cidr_range = "10.0.1.0/24"
 
     }
+    "gke-subnet" = {
+    name = "gke-subnet"
+    cidr_range = "10.1.0.0/16"
+    private_ip_google_access = true
+    }
   }
 }
