@@ -1,3 +1,14 @@
+module "APIs" {
+  source = "../../modules/APIs"
+  project_id = var.my_project
+  # apis = [
+  #   "compute.googleapis.com",
+  #   "storage.googleapis.com"
+  # ]
+  # apis = var.apis
+
+}
+
 resource "google_compute_instance" "default" {
   # count        = 2
   for_each     = var.vm
@@ -59,16 +70,7 @@ resource "google_compute_attached_disk" "my-attached-disk" {
 }
 
 
-module "APIs" {
-  source = "../../modules/APIs"
-  # project_id = var.my_project
-  # apis = [
-  #   "compute.googleapis.com",
-  #   "storage.googleapis.com"
-  # ]
-  # apis = var.apis
 
-}
 
 module "vpc" {
   source = "../../modules/VPC"
