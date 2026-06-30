@@ -1,5 +1,5 @@
 output "subnet-ids" {
     description = "map of subnet id's"
-    value = {for k, subnet in googoogle_compute_subnetwork.subnet : k => subnet.id}
+    value = {for k, subnet in google_compute_subnetwork.subnet : k => subnet.id}
   
 }
