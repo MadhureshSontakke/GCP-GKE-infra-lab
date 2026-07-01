@@ -103,6 +103,7 @@ module "gke" {
   region     = var.my_region
   node_count = 2
   network_id = module.vpc.vpc-id
+  
   depends_on = [module.subnet, module.vpc]
 
 }

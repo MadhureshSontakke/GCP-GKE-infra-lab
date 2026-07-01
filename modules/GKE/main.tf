@@ -7,6 +7,7 @@ resource "google_container_cluster" "gke-cluster" {
     initial_node_count = 1
     logging_service = "logging.googleapis.com/kubernetes"
     monitoring_service = "monitoring.googleapis.com/kubernetes"
+    deletion_protection = false
   
 }
 
@@ -15,6 +16,7 @@ resource "google_container_node_pool" "primary_nodes" {
   location   = "${var.region}-b"
   cluster    = google_container_cluster.gke-cluster.name
   node_count = var.node_count
+  
 
   node_config {
     machine_type = var.machine_type
