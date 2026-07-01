@@ -116,4 +116,6 @@ jobs:
     - name: Terraform destroy
       # working-directory: Environment/prod
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: terraform destroy -auto-approve -input=false
+      run: |
+        terraform destroy -auto-approve -input=false 
+        terraform apply -auto-approve -input=false
